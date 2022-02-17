@@ -1,0 +1,7 @@
+FROM ubuntu:20.04
+
+COPY ./github ./github
+RUN chmod 500 /github/setup-github-auth.sh \
+    && ./github/setup-github-auth.sh
+
+# ... rest of build
