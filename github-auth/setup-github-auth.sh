@@ -2,8 +2,7 @@
 
 set -e
 
-# SET TO YOUR KEY HERE
-ssh_key_name='username@github'
+ssh_key_name="$(ls *@github)"
 ssh_dir=/root/.ssh
 
 if [ "$(command -v apt)" ]; then
