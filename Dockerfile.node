@@ -1,6 +1,10 @@
 FROM node:17-alpine
 
-# needed to install internal git hosted packages
 COPY ./github-auth ./github-auth
-RUN chmod 500 /github-auth/setup-github-auth.sh \
-    && ./github-auth/setup-github-auth.sh
+
+WORKDIR /github-auth
+
+RUN chmod 500 setup-github-auth.sh \
+    && ./setup-github-auth.sh
+
+# ... rest of build
